@@ -1,12 +1,11 @@
 fileFormatVersion: 2
-guid: ecc240320e0cccb4e921c06ff9c7fa81
+guid: 6b98e7f389725e649a0d59a7bd3b0961
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - MainSpriteRenderer: {instanceID: 0}
-  - AttackMaster: {instanceID: 0}
-  - MyAttack: {instanceID: 0}
+  - Player: {fileID: 5468881726794816482, guid: 87269b439378a3b4697c8cf741cb07ee,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

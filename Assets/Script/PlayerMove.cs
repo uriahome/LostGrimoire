@@ -8,8 +8,11 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] SpriteRenderer MainSpriteRenderer;
 
     [SerializeField] float MovePower;//速度
+    public int PlayerDirection;//向いている方向　0:上 1:右 2:左 3:下
 
-    [SerializeField] int PlayerDirection;//向いている方向　0:上 1:右 2:左 3:下
+    [SerializeField] GameObject AttackMaster;//攻撃位置
+    [SerializeField] PlayerAttack MyAttack;
+    public  string NowMagicWord;//今現在の魔法の属性　Shotクラスなどで読み込むのでpublic
 
 
     
@@ -24,7 +27,12 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Move();
+        Move();//移動処理
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            MyAttack.Attack(NowMagicWord);
+        }
+
 
     }
 

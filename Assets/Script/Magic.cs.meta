@@ -1,12 +1,9 @@
 fileFormatVersion: 2
-guid: ecc240320e0cccb4e921c06ff9c7fa81
+guid: 392d7e647ae564a46b2a25b18fa31a06
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - MainSpriteRenderer: {instanceID: 0}
-  - AttackMaster: {instanceID: 0}
-  - MyAttack: {instanceID: 0}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
