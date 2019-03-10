@@ -12,6 +12,7 @@ public class PlayerMove : MonoBehaviour
 
     [SerializeField] GameObject AttackMaster;//攻撃位置
     [SerializeField] PlayerAttack MyAttack;
+    [SerializeField] Rigidbody2D rigid2d;
     public  string NowMagicWord;//今現在の魔法の属性　Shotクラスなどで読み込むのでpublic
 
 
@@ -27,6 +28,8 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        rigid2d.velocity = new Vector2(0, 0) * 0;//加速度を0に
         Move();//移動処理
         if (Input.GetKeyDown(KeyCode.Z))
         {
