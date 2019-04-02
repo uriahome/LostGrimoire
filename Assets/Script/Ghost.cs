@@ -13,9 +13,12 @@ public class Ghost : MonoBehaviour
     public float MoveSpeed;//移動速度
     public float angle;
     public Vector2 MoveV;
+
+
     // Start is called before the first frame update
     void Start()
     {
+
         MyEnemyRange = this.GetComponentInChildren<EnemyRange>();//子オブジェクトから取得
 
     }
@@ -29,7 +32,7 @@ public class Ghost : MonoBehaviour
         }
         else
         {
-            rigidbody2d.velocity = new Vector2(0, 0) * 0;
+            rigidbody2d.velocity = new Vector2(0, 0) * 0;//止める
         }
     }
 

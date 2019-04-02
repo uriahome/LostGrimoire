@@ -13,6 +13,8 @@ public class Magic: MonoBehaviour
 
     [SerializeField] string MagicWord;//属性
 
+    public int MagicPower;//攻撃力
+
 
 
     // Start is called before the first frame update
@@ -49,11 +51,17 @@ public class Magic: MonoBehaviour
     {
         if(MagicWord == "fire")
         {
+            this.MagicPower = 50;
             transform.Translate(0, ShotSpeed, 0);
             if (!GetComponent<Renderer>().isVisible)//画面外に出たら消える
             {
                 Destroy(this.gameObject);
             }
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Destroy(this.gameObject);
     }
 }

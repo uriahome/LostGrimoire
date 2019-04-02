@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 6795507276300632448}
   - component: {fileID: 7928466712289509601}
   - component: {fileID: 7064929939262179033}
+  - component: {fileID: 5015910849878114872}
   m_Layer: 9
   m_Name: Magic_Fire
-  m_TagString: Untagged
+  m_TagString: Shot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -95,5 +96,32 @@ MonoBehaviour:
   NowPlayer: {fileID: 0}
   PlayerObj: {fileID: 0}
   ShotDirection: 0
-  ShotSpeed: 0.4
+  ShotSpeed: 0.2
   MagicWord: 
+  MagicPower: 0
+--- !u!61 &5015910849878114872
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 927542111574648825}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.00340724, y: -0.027257025}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.96, y: 0.96}
+    newSize: {x: 0.96, y: 0.96}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.38078785, y: 0.7828291}
+  m_EdgeRadius: 0
