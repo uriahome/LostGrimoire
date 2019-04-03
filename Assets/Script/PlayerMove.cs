@@ -28,7 +28,7 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        NowMagicWord = Data.Instance.MagicName;
         rigid2d.velocity = new Vector2(0, 0) * 0;//加速度を0に
         Move();//移動処理
         if (Input.GetKeyDown(KeyCode.Z))
