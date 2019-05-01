@@ -40,6 +40,7 @@ public class Candle1 : MonoBehaviour
         //cCon = GetComponent<CharacterController>();
 
         MyEnemyRange = this.GetComponentInChildren<EnemyRange>();//子オブジェクトから取得
+        angle = 0;
         StartCoroutine(Candle_Attack());
     }
 
@@ -65,11 +66,14 @@ public class Candle1 : MonoBehaviour
 
     void Candle_Move()
     {
-        Mypos = transform.position;//自分の座標を代入
+        /*Mypos = transform.position;//自分の座標を代入
         Playpos = MyEnemyRange.LookTarget.transform.position;//playerの座標
         Myangle = Playpos - Mypos;//座標の差
         angle = Mathf.Atan2(Myangle.x, Myangle.y) * Mathf.Rad2Deg;//2点間の角度を求める
-        if (Myangle.x < 0)//向きの調整
+        */
+        /*if (Myangle.x < 0)//向きの調整
+
+    
         {
             transform.rotation = Quaternion.Euler(0, 0, 0);//回転（右向き
                                                            //state.mirror = false;//アニメーションの向きの調整
@@ -80,7 +84,7 @@ public class Candle1 : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, 180, 0);//回転（左向き
                                                              //state.mirror = true;//アニメーションの向きの調整
                                                              // animator.Rebind();
-        }
+        }*/
        /* NowTime += Time.deltaTime;
         if (ShotSpan <= NowTime)
         {
@@ -114,6 +118,16 @@ public class Candle1 : MonoBehaviour
             {
                 EnemyShot S = NowEnemyShot.GetComponent<EnemyShot>();
                 S.Create(angle, ShotSpeed);
+                angle += 60.0f;
+                angle %= 360.0f;
+                if(angle <= 180)
+                {
+                    transform.rotation = Quaternion.Euler(0, 0, 0);
+                }
+                else
+                {
+                    transform.rotation = Quaternion.Euler(0, 180, 0);
+                }
             }
             yield return new WaitForSeconds(0.5f);
         }
@@ -135,8 +149,8 @@ public class Candle1 : MonoBehaviour
         animator.SetBool("AttackBool", true);
         // Candle_Attack();
         Candle_Move();
-        yield return new WaitForSeconds(3f);
-        animator.SetBool("AttackBool", false);
+        yield return new WaitForSeconds(0.1f);
+       // animator.SetBool("AttackBool", false);
         //StartCoroutine(AttackAnimation());
     }
 }

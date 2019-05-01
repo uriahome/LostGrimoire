@@ -20,7 +20,7 @@ public class EnemyShot : MonoBehaviour
     public void Create(float direction,float speed)
     {
         transform.rotation = Quaternion.Euler(0, 0, direction);//回転させる
-        Debug.Log("Create!!!");
+        //Debug.Log("Create!!!");
         rigid2d = GetComponent<Rigidbody2D>();//rigid2dの取得
         Vector2 v;
         v.x = Mathf.Sin(Mathf.Deg2Rad * direction) * speed;

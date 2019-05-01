@@ -15,8 +15,13 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] Rigidbody2D rigid2d;
     public  string NowMagicWord;//今現在の魔法の属性　Shotクラスなどで読み込むのでpublic
 
+    public MagicBook HitMagicBook;//触れた魔導書
+    [SerializeField] GameObject[] MagicBook;//魔導書のオブジェクト保存用
+    [SerializeField] Vector3 MyTransform;
 
-    
+    public bool Muteki;//無敵状態かどうかの判定
+    public int MutekiTime;
+    public float NowTime;
 
 
     // Start is called before the first frame update
@@ -75,5 +80,29 @@ public class PlayerMove : MonoBehaviour
         }
 
         transform.Translate(MoveLateX, MoveLateY, 0);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "MagicBook")
+        {
+            MyTransform = this.gameObject.transform.position;//今の座標
+            HitMagicBook = collision.gameObject.GetComponent<MagicBook>();
+            //Debug.Log("otoshita");
+            switch (NowMagicWord)
+            {
+                case "fire":
+                    Instantiate(MagicBook[0], MyTransform, Quaternion.identity);
+                    break;
+                case "wind":
+                    Instantiate(MagicBook[1], MyTransform, Quaternion.identity);
+                    break;
+                case "flash":
+                    Instantiate(MagicBook[2], MyTransform, Quaternion.identity);
+                    break;
+            }
+            NowMagicWord = HitMagicBook.MagicWord;//拾った魔導書の名前をもらう
+            Data.Instance.MagicName = NowMagicWord;
+        }
     }
 }
