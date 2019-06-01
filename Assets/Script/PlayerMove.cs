@@ -104,5 +104,27 @@ public class PlayerMove : MonoBehaviour
             NowMagicWord = HitMagicBook.MagicWord;//拾った魔導書の名前をもらう
             Data.Instance.MagicName = NowMagicWord;
         }
+        if(collision.gameObject.tag =="EnemyShot" || collision.gameObject.tag == "Enemy")
+        {
+            StartCoroutine("Blink");
+        }
+    }
+
+    public IEnumerator Blink()//点滅
+    {
+        int BlinkCount = 0;
+        float interval = 0.1f;
+        while (true)
+        {
+            var renderComponent = GetComponent<Renderer>();
+            BlinkCount++;
+            if (BlinkCount >= 6)
+            {
+                renderComponent.enabled = true;
+                yield break;
+            }
+            renderComponent.enabled = !renderComponent.enabled;
+            yield return new WaitForSeconds(interval);
+        }
     }
 }

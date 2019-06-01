@@ -24,7 +24,7 @@ public class Magic: MonoBehaviour
         NowPlayer = PlayerObj.GetComponent<PlayerMove>();
         MagicWord =NowPlayer.NowMagicWord;//自分の属性の確定
         ShotDirection = NowPlayer.PlayerDirection;
-        Debug.Log(ShotDirection);
+      //  Debug.Log(ShotDirection);
         switch (ShotDirection)//方向の確定
         {
             case 0://上

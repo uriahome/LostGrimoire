@@ -32,4 +32,8 @@ public class EnemyShot : MonoBehaviour
     {//画面外に出たら消える
         Destroy(this.gameObject);
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Destroy(this.gameObject);
+    }
 }

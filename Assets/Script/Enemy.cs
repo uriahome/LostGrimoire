@@ -33,7 +33,26 @@ public class Enemy : MonoBehaviour
         if(collision.gameObject.tag == "Shot")//弾に当たった時
         {
             Hp -= collision.gameObject.GetComponent<Magic>().MagicPower;//攻撃力分のダメージを受ける
+            StartCoroutine("Blink");
+            Debug.Log("残りHP=" + Hp);
 
+        }
+    }
+    public IEnumerator Blink()//点滅
+    {
+        int BlinkCount = 0;
+        float interval = 0.1f;
+        while (true)
+        {
+            var renderComponent = GetComponent<Renderer>();
+            BlinkCount++;
+            if (BlinkCount >= 6)
+            {
+                renderComponent.enabled = true;
+                yield break;
+            }
+            renderComponent.enabled = !renderComponent.enabled;
+            yield return new WaitForSeconds(interval);
         }
     }
 }
