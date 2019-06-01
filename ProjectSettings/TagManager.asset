@@ -9,6 +9,7 @@ TagManager:
   - Shot
   - MagicBook
   - Armor
+  - EnemyShot
   layers:
   - Default
   - TransparentFX
@@ -24,7 +25,7 @@ TagManager:
   - EnemyRange
   - MagicBook
   - Armor
-  - 
+  - EnemyShot
   - 
   - 
   - 

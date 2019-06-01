@@ -27,6 +27,9 @@ public class PlayerAttack : MonoBehaviour
             case "fire":
                 Instantiate(Shot[0], Mytransform, Quaternion.identity);
                 break;
+            case "wind":
+                Instantiate(Shot[1], Mytransform, Quaternion.identity);
+                break;
         }
     }
 }
