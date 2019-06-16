@@ -103,9 +103,10 @@ GameObject:
   - component: {fileID: 1816703806}
   - component: {fileID: 1816703804}
   - component: {fileID: 1816703803}
-  m_Layer: 10
+  - component: {fileID: 635439933}
+  m_Layer: 13
   m_Name: Armor_Enemy
-  m_TagString: Enemy
+  m_TagString: Armor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -259,3 +260,24 @@ MonoBehaviour:
   ShotSpeed: 3
   Hp: 200
   Score: 0
+--- !u!50 &635439933
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1816703802}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 3
