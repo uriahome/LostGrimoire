@@ -6,6 +6,7 @@ public class PlayerAttack : MonoBehaviour
 {
 
     [SerializeField] GameObject[] Shot;
+    [SerializeField] GameObject[] SubShot;
     [SerializeField] Vector3 Mytransform;//自分の座標
     [SerializeField] GameObject Player;
 
@@ -29,6 +30,10 @@ public class PlayerAttack : MonoBehaviour
                 break;
             case "wind":
                 Instantiate(Shot[1], Mytransform, Quaternion.identity);
+                break;
+            case "ice":
+                Instantiate(Shot[2], Mytransform, Quaternion.identity);
+                Instantiate(SubShot[0], Mytransform, Quaternion.identity);
                 break;
         }
     }

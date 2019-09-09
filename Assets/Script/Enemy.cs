@@ -32,7 +32,8 @@ public class Enemy : MonoBehaviour
     {
         if(collision.gameObject.tag == "Shot")//弾に当たった時
         {
-            Hp -= collision.gameObject.GetComponent<Magic>().MagicPower;//攻撃力分のダメージを受ける
+            //Hp -= collision.gameObject.GetComponent<Magic>().MagicPower;//攻撃力分のダメージを受ける
+            Hp -= 50;//一律50にしたい（届かぬ思い）
             StartCoroutine("Blink");
             Debug.Log("残りHP=" + Hp);
 

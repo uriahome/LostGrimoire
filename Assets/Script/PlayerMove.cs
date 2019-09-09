@@ -97,7 +97,7 @@ public class PlayerMove : MonoBehaviour
                 case "wind":
                     Instantiate(MagicBook[1], MyTransform, Quaternion.identity);
                     break;
-                case "flash":
+                case "ice":
                     Instantiate(MagicBook[2], MyTransform, Quaternion.identity);
                     break;
             }

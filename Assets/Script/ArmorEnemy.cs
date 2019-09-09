@@ -54,9 +54,12 @@ public class ArmorEnemy : MonoBehaviour
     }
     public void Attack()
     {
+        //これはanimationから呼ばれる
+        Debug.Log("Armor__Attack");
         ShotPosition = this.transform.position;
         ShotPosition.x -= 0.3f;
-        Instantiate(ArmorShot,ShotPosition ,Quaternion.identity);
+        //この下の一行の存在を忘れて永遠に止まっていた許さんぞ過去の俺（許す
+       // Instantiate(ArmorShot,ShotPosition ,Quaternion.identity);
         NowEnemyShot = Instantiate(ArmorShot, this.transform.position, this.transform.rotation) as GameObject;
         if (ArmorShot != null)
         {
@@ -69,7 +72,8 @@ public class ArmorEnemy : MonoBehaviour
     {
             if (collision.gameObject.tag == "Shot")//弾に当たった時
             {
-                Hp -= collision.gameObject.GetComponent<Magic>().MagicPower;//攻撃力分のダメージを受ける
+            //Hp -= collision.gameObject.GetComponent<Magic>().MagicPower;//攻撃力分のダメージを受ける
+                Hp -= 50;//面倒だから一律50にしたい
                 StartCoroutine("Blink");
                 Debug.Log("残りHP=" + Hp);
 
