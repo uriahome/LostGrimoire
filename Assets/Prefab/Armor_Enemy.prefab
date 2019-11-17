@@ -259,7 +259,7 @@ MonoBehaviour:
   NowEnemyShot: {fileID: 0}
   ShotSpeed: 3
   Hp: 200
-  Score: 0
+  Score: 500
 --- !u!50 &635439933
 Rigidbody2D:
   serializedVersion: 4

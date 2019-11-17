@@ -107,6 +107,7 @@ public class PlayerMove : MonoBehaviour
         if(collision.gameObject.tag =="EnemyShot" || collision.gameObject.tag == "Enemy")
         {
             StartCoroutine("Blink");
+            FindObjectOfType<Score>().AddScore(-50);//ダメージを受けたら減点
         }
     }
 

@@ -42,6 +42,7 @@ public class ArmorEnemy : MonoBehaviour
         if (Hp <= 0)
         {
             Destroy(this.gameObject);//体力がないなら消滅する
+            FindObjectOfType<Score>().AddScore(Score);
         }
     }
 

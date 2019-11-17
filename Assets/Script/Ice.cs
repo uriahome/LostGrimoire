@@ -41,6 +41,10 @@ public class Ice : MonoBehaviour
     void Update()
     {
         AttackMagic();
+        if (!GetComponent<Renderer>().isVisible)
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     void AttackMagic()
